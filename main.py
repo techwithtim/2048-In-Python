@@ -114,7 +114,6 @@ def get_random_pos(tiles):
 
 def move_tiles(window, tiles, clock, direction):
     updated = True
-    blocks = set()
 
     if direction == "left":
         sort_func = lambda x: x.col
@@ -198,7 +197,7 @@ def move_tiles(window, tiles, clock, direction):
 
 
 def end_move(tiles):
-    if len(tiles) == 16:
+    if len(tiles) == ROWS * COLS:
         return "lost"
 
     row, col = get_random_pos(tiles)
@@ -207,7 +206,6 @@ def end_move(tiles):
 
 
 def update_tiles(window, tiles, sorted_tiles):
-    tiles.clear()
     for tile in sorted_tiles:
         tiles[f"{tile.row}{tile.col}"] = tile
 
@@ -250,7 +248,6 @@ def main(window):
         draw(window, tiles)
 
     pygame.quit()
-
 
 if __name__ == "__main__":
     main(WINDOW)
