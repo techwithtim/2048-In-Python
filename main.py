@@ -222,6 +222,18 @@ def generate_tiles():
 
     return tiles
 
+ # if event.type == pygame.KEYDOWN:
+ #                if event.key == pygame.K_LEFT:
+ #                    move_tiles(window, tiles, clock, "left")
+ #                if event.key == pygame.K_RIGHT:
+ #                    move_tiles(window, tiles, clock, "right")
+ #                if event.key == pygame.K_UP:
+ #                    move_tiles(window, tiles, clock, "up")
+ #                if event.key == pygame.K_DOWN:
+ #                    move_tiles(window, tiles, clock, "down")
+
+ #        draw(window, tiles)
+
 
 def main(window):
     clock = pygame.time.Clock()
@@ -248,6 +260,7 @@ def main(window):
                     move_tiles(window, tiles, clock, "down")
 
         draw(window, tiles)
+        
 
     pygame.quit()
 
